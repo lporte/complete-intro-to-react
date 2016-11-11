@@ -1,27 +1,26 @@
 var div = React.DOM.div
 var h1 = React.DOM.h1
 
-// create a new type element
-//  this is called a composite component
 var MyTitle = React.createClass({
 	render() {
 		return (
-
 			div(null,
-				h1(null, 'Another thing!'))
+				// displaying the props, can pass in anything in JS!
+				h1(null, this.props.title))
 		)
 	}
 })
 
+var MyTitleFactory = React.createFactory(MyTitle)
+var ce = React.createElement
+
 var MyFirstComponent = (
-	// one top lvl element w/ children 
     div(
     	null,
-    	// one specific instance of the class
-    	React.createElement(MyTitle, null),
-    	React.createElement(MyTitle, null),
-    	React.createElement(MyTitle, null),
-    	React.createElement(MyTitle, null)
+    	// passing in props
+    	MyTitleFactory({title: 'Props are cool'}),
+    	React.createElement(MyTitle, {title: 'Use props'}),
+    	ce(MyTitle, {title: 'Woah props'})
     )
 )
 
