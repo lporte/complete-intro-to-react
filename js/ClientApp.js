@@ -1,12 +1,22 @@
 var div = React.DOM.div
 var h1 = React.DOM.h1
+var h2 = React.DOM.h2
+
 
 var MyTitle = React.createClass({
+	// all components need a render method
+	// must be 'pure' in that its state shouldn't change
 	render() {
+		// MUST return a component
 		return (
-			div(null,
+			// this is the first element (always one)
+			// first arg is the styling
+			div({style: {color: 'red'}},
 				// displaying the props, can pass in anything in JS!
-				h1(null, this.props.title))
+				// children elements are second arg
+				h1(null, this.props.title),
+				h2(null, 'WAT')
+			)
 		)
 	}
 })
