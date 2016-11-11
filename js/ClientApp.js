@@ -14,7 +14,7 @@ var MyTitle = React.createClass({
 			div({style: {color: 'red'}},
 				// displaying the props, can pass in anything in JS!
 				// children elements are second arg
-				h1(null, this.props.title),
+				h1({style: {color: this.props.color}}, this.props.title),
 				h2(null, 'WAT')
 			)
 		)
@@ -28,9 +28,9 @@ var MyFirstComponent = (
     div(
     	null,
     	// passing in props
-    	MyTitleFactory({title: 'Props are cool'}),
-    	React.createElement(MyTitle, {title: 'Use props'}),
-    	ce(MyTitle, {title: 'Woah props'})
+    	MyTitleFactory({title: 'Props are cool', color: 'rebeccapurple'}),
+    	React.createElement(MyTitle, {title: 'Use props', color: 'mediumaquamarine'}),
+    	ce(MyTitle, {title: 'Woah props', color: 'papayawhip'})
     )
 )
 
