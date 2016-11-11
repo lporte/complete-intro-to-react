@@ -8,6 +8,24 @@ var MyTitle = require('./MyTitle')
 
 // yanking out the render method and just doing this... 
 // just a function!!!
+// ES6 arrow:
+//   MyFirstComponent = () =>
+// current JS:
+//   MyFirstComponent = function () {
+//  ORRRRR Implicit return - thanks coffeescript
+// var MyFirstComponent = () => (
+// 		<div>
+// 			// caps is a composite I made
+// 			// closing / means DONE
+//     		<MyTitle title='Whatevs' color='rebeccapurple' />
+//     	<div>
+//     	<input />
+// 	)
+
+
+
+
+
 var MyFirstComponent = function () {
 	return (
 		<div>
