@@ -5,19 +5,20 @@ var ReactDOM = require('react-dom')
 
 var MyTitle = require('./MyTitle')
 
-var div = React.DOM.div
 
-// standard 
-var MyTitleFactory = React.createFactory(MyTitle)
-var ce = React.createElement
+// yanking out the render method and just doing this... 
+// just a function!!!
+var MyFirstComponent = function () {
+	return (
+		<div>
+			// caps is a composite I made
+			// closing / means DONE
+    		<MyTitle title='Whatevs' color='rebeccapurple' />
+    	<div>
+    	<input />
+	)
+}
+    
 
-var MyFirstComponent = (
-    div(
-    	null,
-    	MyTitleFactory({title: 'Props are cool', color: 'rebeccapurple'}),
-    	React.createElement(MyTitle, {title: 'Use props', color: 'mediumaquamarine'}),
-    	ce(MyTitle, {title: 'Woah props', color: 'papayawhip'})
-    )
-)
 
-ReactDOM.render(MyFirstComponent, document.getElementById('app'))
+ReactDOM.render(<MyFirstComponent />, document.getElementById('app'))
